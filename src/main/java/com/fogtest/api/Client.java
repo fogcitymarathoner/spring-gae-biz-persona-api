@@ -1,22 +1,41 @@
 package com.fogtest.api;
 
+import javax.persistence.*;
 import java.util.Date;
 
+@Entity
+@Table(name="clients")
 public class Client {
 
+    @Id
+    @Column(name="id")
+    @GeneratedValue
     private long id;
+    @Column(name="name")
     private String name;
+    @Column(name="street1")
     private String street1;
+    @Column(name="street2")
     private String street2;
+    @Column(name="city")
     private String city;
+    @Column(name="state_id")
     private long state_id;
+    @Column(name="zip")
     private String zip;
+    @Column(name="active")
     private Boolean active;
+    @Column(name="terms")
     private int terms;
+    @Column(name="hq")
     private Boolean hq;
+    @Column(name="created_date")
     private Date created_date;
+    @Column(name="modified_date")
     private Date modified_date;
+    @Column(name="created_user")
     private long created_user;
+    @Column(name="last_sync_time")
     private Date last_sync_time;
 
     public Client() {
