@@ -12,15 +12,23 @@ import java.util.List;
 public class ApiController {
 
     private com.fogtest.api.ClientServices clientServices;
+    private com.fogtest.api.ContractServices contractServices;
 
     @Autowired
-    public ApiController(com.fogtest.api.ClientServices clientServices){
+    public ApiController(com.fogtest.api.ClientServices clientServices,
+                         com.fogtest.api.ContractServices contractServices){
         super();
         this.clientServices = clientServices;
+        this.contractServices = contractServices;
     }
 
     @GetMapping("/clients")
     public List<Client> getAllClients(){
         return this.clientServices.getAllClients();
+    }
+
+    @GetMapping("/contracts")
+    public List<Contract> getAllContracts(){
+        return this.contractServices.getAllContracts();
     }
 }
