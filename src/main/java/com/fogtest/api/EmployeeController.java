@@ -11,15 +11,15 @@ import java.util.List;
 import java.util.Date;
 
 @Controller
-@RequestMapping("/clients")
-public class ClientController {
+@RequestMapping("/employees")
+public class EmployeeController {
 
-    private static List<Client> clients = new ArrayList<>();
+    private static List<Employee> employees = new ArrayList<>();
 
     @GetMapping
-    public String getAllClients(Model model){
-        model.addAttribute("clients", clients);
-        return "clients";
+    public String getAllEmployees(Model model){
+        model.addAttribute("employees", employees);
+        return "employees";
     }
 }
 
