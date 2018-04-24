@@ -14,12 +14,16 @@ public class ApiController {
     private com.fogtest.api.ClientServices clientServices;
     private com.fogtest.api.ContractServices contractServices;
 
+    private com.fogtest.api.EmployeeServices employeeServices;
+
     @Autowired
     public ApiController(com.fogtest.api.ClientServices clientServices,
-                         com.fogtest.api.ContractServices contractServices){
+                         com.fogtest.api.ContractServices contractServices,
+                         com.fogtest.api.EmployeeServices employeeServices){
         super();
         this.clientServices = clientServices;
         this.contractServices = contractServices;
+        this.employeeServices = employeeServices;
     }
 
     @GetMapping("/clients")
@@ -30,5 +34,10 @@ public class ApiController {
     @GetMapping("/contracts")
     public List<Contract> getAllContracts(){
         return this.contractServices.getAllContracts();
+    }
+
+    @GetMapping("/employees")
+    public List<Employee> getAllEmployees(){
+        return this.employeeServices.getAllEmployees();
     }
 }
