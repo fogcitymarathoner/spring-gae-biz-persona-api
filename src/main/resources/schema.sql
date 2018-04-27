@@ -124,4 +124,22 @@ CREATE TABLE `clients_memos` (
   `modified_user_id` int(11) DEFAULT NULL,
   `last_sync_time` datetime NOT NULL,
   PRIMARY KEY (`id`),
-)
+);
+
+CREATE TABLE `contracts_items` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `active` int(11) DEFAULT '1',
+  `contract_id` int(11) NOT NULL DEFAULT '0',
+  `description` varchar(60) NOT NULL,
+  `amt` float NOT NULL DEFAULT '0',
+  `cost` float NOT NULL DEFAULT '0',
+  `notes` varchar(100) NOT NULL,
+  `ordering` int(5) DEFAULT '0',
+  `created_date` date DEFAULT NULL,
+  `modified_date` datetime DEFAULT NULL,
+  `created_user_id` int(11) DEFAULT NULL,
+  `modified_user_id` int(11) DEFAULT NULL,
+  `last_sync_time` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
