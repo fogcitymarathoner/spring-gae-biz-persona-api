@@ -16,6 +16,7 @@ public class ApiController {
     private com.fogtest.api.ClientMemoServices clientMemoServices;
     private com.fogtest.api.ContractServices contractServices;
     private com.fogtest.api.ContractItemServices contractItemServices;
+    private com.fogtest.api.ExpenseServices expenseServices;
     private com.fogtest.api.EmployeeServices employeeServices;
     private com.fogtest.api.EmployeeMemoServices employeeMemoServices;
     private com.fogtest.api.StateServices stateServices;
@@ -26,6 +27,7 @@ public class ApiController {
                          com.fogtest.api.ClientMemoServices clientMemoServices,
                          com.fogtest.api.ContractServices contractServices,
                          com.fogtest.api.ContractItemServices contractItemServices,
+                         com.fogtest.api.ExpenseServices expenseServices,
                          com.fogtest.api.EmployeeServices employeeServices,
                          com.fogtest.api.EmployeeMemoServices employeeMemoServices,
                          com.fogtest.api.StateServices stateServices){
@@ -35,6 +37,7 @@ public class ApiController {
         this.clientMemoServices = clientMemoServices;
         this.contractServices = contractServices;
         this.contractItemServices = contractItemServices;
+        this.expenseServices = expenseServices;
         this.employeeServices = employeeServices;
         this.employeeMemoServices = employeeMemoServices;
         this.stateServices = stateServices;
@@ -63,6 +66,11 @@ public class ApiController {
     @GetMapping("/contractitems")
     public List<ContractItem> getAllContractItems(){
         return this.contractItemServices.getAllContractItems();
+    }
+
+    @GetMapping("/expenses")
+    public List<Expense> getAllExpenses(){
+        return this.expenseServices.getAllExpenses();
     }
 
     @GetMapping("/employees")

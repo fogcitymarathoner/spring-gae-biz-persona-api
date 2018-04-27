@@ -154,6 +154,26 @@ CREATE TABLE `employees_memos` (
   `created_date` datetime NOT NULL,
   `last_sync_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `expenses` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `amount` float NOT NULL,
+  `category_id` int(2) NOT NULL,
+  `employee_id` int(11) NOT NULL,
+  `report_id` int(11) NOT NULL,
+  `cleared` tinyint(4) NOT NULL,
+  `date` date NOT NULL,
+  `description` char(45) NOT NULL,
+  `notes` char(200) NOT NULL,
+  `created_date` date NOT NULL,
+  `modified_date` datetime NOT NULL,
+  `last_sync_time` datetime NOT NULL,
+  `created_user_id` int(11) NOT NULL,
+  `modified_user_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
 )
+
+
 
 
