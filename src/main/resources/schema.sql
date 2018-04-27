@@ -92,7 +92,7 @@ CREATE TABLE states (
   id int(10) unsigned NOT NULL AUTO_INCREMENT,
   last_sync_time datetime DEFAULT NULL,
   modified_user_id int(11) DEFAULT NULL,
-  created_user_id int(11) DEFAULT NULL,
+  created_user_id int(11) DEFAULT 0,
   created_date datetime DEFAULT NULL,
   modified_date datetime DEFAULT NULL,
   PRIMARY KEY (id)

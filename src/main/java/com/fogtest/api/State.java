@@ -21,7 +21,21 @@ public class State {
     private String state_no;
     @Column(name="date")
     private String date;
+    @Column(name="created_date")
+    private Date created_date;
+    @Column(name="modified_date")
+    private Date modified_date;
+    @Column(name="created_user_id")
+    private long created_user_id;
+    @Column(name="modified_user_id")
+    private long modified_user_id;
+    @Column(name="last_sync_time")
+    private Date last_sync_time;
 
+
+    public State() {
+        super();
+    }
 
     public long getId() {
         return id;
@@ -63,11 +77,11 @@ public class State {
         this.state_no = state_no;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
@@ -111,11 +125,8 @@ public class State {
         this.last_sync_time = last_sync_time;
     }
 
-    public State() {
-        super();
-    }
+    public State(long id, String post_ab, String capital, String flower, String state_no, String date, Date created_date, Date modified_date, long created_user_id, long modified_user_id, Date last_sync_time) {
 
-    public State(long id, String post_ab, String capital, String flower, String state_no, Date date, Date created_date, Date modified_date, long created_user_id, long modified_user_id, Date last_sync_time) {
         this.id = id;
         this.post_ab = post_ab;
         this.capital = capital;
@@ -128,16 +139,4 @@ public class State {
         this.modified_user_id = modified_user_id;
         this.last_sync_time = last_sync_time;
     }
-
-    @Column(name="created_date")
-    private Date created_date;
-    @Column(name="modified_date")
-    private Date modified_date;
-    @Column(name="created_user_id")
-    private long created_user_id;
-    @Column(name="modified_user_id")
-    private long modified_user_id;
-    @Column(name="last_sync_time")
-    private Date last_sync_time;
-
 }
