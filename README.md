@@ -19,5 +19,10 @@ Enter your appengine project. Use commands above develop and deploy.
 Comes from this project https://github.com/GoogleCloudPlatform/getting-started-java/tree/master/appengine-standard-java8/springboot-appengine-standard
 but information like 'mvn appengine:deploy' is WRONG.
 
+H2 database access
+jdbc:h2:mem:testdb
+
+devtools does not work
+
 Todo: Remove demonstration labels like 'demo', 'example' and 'hello'
 Todo: Reformat this README.md

@@ -12,17 +12,20 @@ import java.util.List;
 public class ApiController {
 
     private com.fogtest.api.ClientServices clientServices;
+    private com.fogtest.api.ClientCheckServices clientCheckServices;
     private com.fogtest.api.ContractServices contractServices;
     private com.fogtest.api.EmployeeServices employeeServices;
     private com.fogtest.api.StateServices stateServices;
 
     @Autowired
     public ApiController(com.fogtest.api.ClientServices clientServices,
+                         com.fogtest.api.ClientCheckServices clientCheckServices,
                          com.fogtest.api.ContractServices contractServices,
                          com.fogtest.api.EmployeeServices employeeServices,
                          com.fogtest.api.StateServices stateServices){
         super();
         this.clientServices = clientServices;
+        this.clientCheckServices = clientCheckServices;
         this.contractServices = contractServices;
         this.employeeServices = employeeServices;
         this.stateServices = stateServices;
@@ -31,6 +34,11 @@ public class ApiController {
     @GetMapping("/clients")
     public List<Client> getAllClients(){
         return this.clientServices.getAllClients();
+    }
+
+    @GetMapping("/clientschecks")
+    public List<ClientCheck> getAllClientChecks(){
+        return this.clientCheckServices.getAllClientChecks();
     }
 
     @GetMapping("/contracts")

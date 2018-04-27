@@ -97,3 +97,18 @@ CREATE TABLE states (
   modified_date datetime DEFAULT NULL,
   PRIMARY KEY (id)
 );
+
+CREATE TABLE `clients_checks` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `client_id` int(11) NOT NULL,
+  `number` varchar(20) NOT NULL,
+  `amount` float NOT NULL,
+  `notes` varchar(100) DEFAULT NULL,
+  `date` datetime DEFAULT NULL,
+  `created_date` date DEFAULT NULL,
+  `created_user_id` int(11) DEFAULT NULL,
+  `modified_user_id` int(11) DEFAULT NULL,
+  `modified_date` datetime DEFAULT NULL,
+  `last_sync_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+)
