@@ -80,4 +80,20 @@ CREATE TABLE employees (
   created_user_id int(11) DEFAULT '0',
   modified_user_id int(11) DEFAULT '0',
   last_sync_time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (id))
+  PRIMARY KEY (id));
+
+CREATE TABLE states (
+  post_ab char(2) NOT NULL,
+  capital char(14) NOT NULL,
+  date char(10) NOT NULL,
+  flower char(27) NOT NULL,
+  name char(14) NOT NULL,
+  state_no char(9) NOT NULL,
+  id int(10) unsigned NOT NULL AUTO_INCREMENT,
+  last_sync_time datetime DEFAULT NULL,
+  modified_user_id int(11) DEFAULT NULL,
+  created_user_id int(11) DEFAULT NULL,
+  created_date datetime DEFAULT NULL,
+  modified_date datetime DEFAULT NULL,
+  PRIMARY KEY (id)
+);
