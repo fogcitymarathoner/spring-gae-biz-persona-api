@@ -111,4 +111,17 @@ CREATE TABLE `clients_checks` (
   `modified_date` datetime DEFAULT NULL,
   `last_sync_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `clients_memos` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `date` date NOT NULL,
+  `notes` text,
+  `client_id` int(11) unsigned DEFAULT NULL,
+  `created_date` date DEFAULT NULL,
+  `modified_date` datetime DEFAULT NULL,
+  `created_user_id` int(11) DEFAULT NULL,
+  `modified_user_id` int(11) DEFAULT NULL,
+  `last_sync_time` datetime NOT NULL,
+  PRIMARY KEY (`id`),
 )

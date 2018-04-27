@@ -1,6 +1,9 @@
 # data
 data.sql
 
+# mac junk
+.DS_Store
+
 # Compiled class file
 *.class
 
