@@ -17,6 +17,7 @@ public class ApiController {
     private com.fogtest.api.ContractServices contractServices;
     private com.fogtest.api.ContractItemServices contractItemServices;
     private com.fogtest.api.EmployeeServices employeeServices;
+    private com.fogtest.api.EmployeeMemoServices employeeMemoServices;
     private com.fogtest.api.StateServices stateServices;
 
     @Autowired
@@ -26,6 +27,7 @@ public class ApiController {
                          com.fogtest.api.ContractServices contractServices,
                          com.fogtest.api.ContractItemServices contractItemServices,
                          com.fogtest.api.EmployeeServices employeeServices,
+                         com.fogtest.api.EmployeeMemoServices employeeMemoServices,
                          com.fogtest.api.StateServices stateServices){
         super();
         this.clientServices = clientServices;
@@ -34,6 +36,7 @@ public class ApiController {
         this.contractServices = contractServices;
         this.contractItemServices = contractItemServices;
         this.employeeServices = employeeServices;
+        this.employeeMemoServices = employeeMemoServices;
         this.stateServices = stateServices;
     }
 
@@ -67,6 +70,10 @@ public class ApiController {
         return this.employeeServices.getAllEmployees();
     }
 
+    @GetMapping("/employeesmemos")
+    public List<EmployeeMemo> getAllEmployeeMemos(){
+        return this.employeeMemoServices.getAllEmployeeMemos();
+    }
     @GetMapping("/states")
     public List<State> getAllStates(){
         return this.stateServices.getAllStates();

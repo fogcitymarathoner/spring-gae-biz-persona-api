@@ -143,3 +143,17 @@ CREATE TABLE `contracts_items` (
   PRIMARY KEY (`id`)
 );
 
+CREATE TABLE `employees_memos` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `date` date NOT NULL,
+  `notes` text,
+  `employee_id` int(11) unsigned DEFAULT NULL,
+  `created_user_id` int(11) NOT NULL,
+  `modified_user_id` int(11) NOT NULL,
+  `modified_date` datetime NOT NULL,
+  `created_date` datetime NOT NULL,
+  `last_sync_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+)
+
+
