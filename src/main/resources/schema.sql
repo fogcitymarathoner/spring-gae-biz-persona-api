@@ -172,7 +172,44 @@ CREATE TABLE `expenses` (
   `created_user_id` int(11) NOT NULL,
   `modified_user_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-)
+);
+
+CREATE TABLE `expenses_categories` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` char(22) NOT NULL,
+  PRIMARY KEY (`id`)
+);
+
+
+CREATE TABLE `invoices` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `contract_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `date` date NOT NULL DEFAULT '0000-00-00',
+  `po` varchar(30) DEFAULT NULL,
+  `employerexpenserate` float NOT NULL DEFAULT '0',
+  `terms` int(10) unsigned NOT NULL DEFAULT '0',
+  `timecard` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `notes` text,
+  `period_start` date DEFAULT NULL,
+  `period_end` date DEFAULT NULL,
+  `posted` tinyint(1) NOT NULL DEFAULT '0',
+  `cleared` tinyint(1) NOT NULL DEFAULT '0',
+  `cleared_date` date DEFAULT NULL,
+  `prcleared` tinyint(1) NOT NULL DEFAULT '0',
+  `timecard_receipt_sent` tinyint(1) NOT NULL,
+  `message` text NOT NULL,
+  `amount` float NOT NULL,
+  `voided` tinyint(1) NOT NULL DEFAULT '0',
+  `token` varchar(64) DEFAULT NULL,
+  `view_count` int(11) DEFAULT NULL,
+  `mock` tinyint(1) DEFAULT '0',
+  `created_date` date DEFAULT NULL,
+  `modified_date` datetime DEFAULT NULL,
+  `last_sync_time` datetime DEFAULT NULL,
+  `created_user_id` int(11) DEFAULT NULL,
+  `modified_user_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`));
+
 
 
 
