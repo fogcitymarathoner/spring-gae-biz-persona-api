@@ -15,6 +15,8 @@ public class State {
     private String post_ab;
     @Column(name="capital")
     private String capital;
+    @Column(name="name")
+    private String name;
     @Column(name="flower")
     private String flower;
     @Column(name="state_no")
@@ -59,6 +61,14 @@ public class State {
 
     public void setCapital(String capital) {
         this.capital = capital;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getFlower() {
