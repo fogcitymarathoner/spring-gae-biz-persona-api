@@ -210,6 +210,23 @@ CREATE TABLE `invoices` (
   `modified_user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`));
 
+CREATE TABLE `invoices_items` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `active` int(11) DEFAULT '1',
+  `invoice_id` int(11) NOT NULL DEFAULT '0',
+  `description` varchar(60) NOT NULL,
+  `amount` float NOT NULL DEFAULT '0',
+  `quantity` float NOT NULL DEFAULT '0',
+  `cost` float NOT NULL DEFAULT '0',
+  `cleared` tinyint(1) NOT NULL DEFAULT '0',
+  `ordering` int(5) DEFAULT '0',
+  `created_date` date DEFAULT NULL,
+  `modified_date` datetime DEFAULT NULL,
+  `created_user_id` int(11) DEFAULT NULL,
+  `modified_user_id` int(11) DEFAULT NULL,
+  `last_sync_time` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
 
 
 
