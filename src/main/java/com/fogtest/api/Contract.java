@@ -1,6 +1,8 @@
 package com.fogtest.api;
 
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Date;
 
 @Entity
@@ -40,6 +42,9 @@ public class Contract {
     @Column(name = "last_sync_time")
     private Date last_sync_time;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "client_id", nullable = false, insertable = false, updatable = false)
+    private Client client;
 
     public Contract() {
         super();
@@ -61,6 +66,15 @@ public class Contract {
         this.created_user_id = created_user_id;
         this.modified_user_id = modified_user_id;
         this.last_sync_time = last_sync_time;
+    }
+
+    public long getId() {
+
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public long getClient_id() {
@@ -119,19 +133,19 @@ public class Contract {
         this.terms = terms;
     }
 
-    public Date getstartdate() {
+    public Date getStartdate() {
         return startdate;
     }
 
-    public void setstartdate(Date startdate) {
+    public void setStartdate(Date startdate) {
         this.startdate = startdate;
     }
 
-    public Date getenddate() {
+    public Date getEnddate() {
         return enddate;
     }
 
-    public void setenddate(Date enddate) {
+    public void setEnddate(Date enddate) {
         this.enddate = enddate;
     }
 
