@@ -28,6 +28,7 @@ H2 database access
 jdbc:h2:mem:testdb
 
 devtools does not work with appengine.
+joined tables do not work with jackson as demonstrated by 'mysql' branch.
 
 Links
 =====

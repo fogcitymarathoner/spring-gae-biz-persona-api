@@ -1,6 +1,9 @@
 # data
 data.sql
 
+# DB Password
+application.properties
+
 # mac junk
 .DS_Store
 
