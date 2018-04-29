@@ -27,7 +27,10 @@ Database
 H2 database access
 jdbc:h2:mem:testdb
 
+Caveats
+-------
 devtools does not work with appengine.
+table joined models do not work with jackson. work ok with ThymeLeaf.
 
 Links
 =====
