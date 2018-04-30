@@ -2,6 +2,9 @@ package com.fogtest.api;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Assert;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -9,13 +12,13 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class ApiApplicationTests {
 
-	@BeforeAll
-	public static void setUp() {
+	@Before
+	public void setUp() {
 		// Do something before all tests
 	}
 
-	@AfterAll
-	public static void tearDown() {
+	@After
+	public void tearDown() {
 		// Do something after all tests
 	}
 
@@ -26,6 +29,6 @@ public class ApiApplicationTests {
 	@Test
 	public void testAdd() {
 		int a = 1, b = 1;
-		Assertions.assertEquals(2, a + b);
+		Assert.assertEquals(2, a + b);
 	}
 }
