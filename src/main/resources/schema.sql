@@ -227,7 +227,3 @@ CREATE TABLE `invoices_items` (
   `last_sync_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 );
-
-
-
-
