@@ -2,6 +2,8 @@ package com.fogtest.api;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name="clients")
@@ -38,8 +40,21 @@ public class Client {
     @Column(name="last_sync_time")
     private Date last_sync_time;
 
+    @OneToMany(cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY,
+            mappedBy = "client")
+    private Set<Contract> contracts = new HashSet<>();
+
     public Client() {
         super();
+    }
+
+    public Set<Contract> getContracts() {
+        return contracts;
+    }
+
+    public void setContracts(Set<Contract> contracts) {
+        this.contracts = contracts;
     }
 
     public Client(long id,

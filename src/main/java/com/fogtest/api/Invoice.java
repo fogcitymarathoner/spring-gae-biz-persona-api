@@ -62,6 +62,9 @@ public class Invoice {
     private long modified_user_id;
     @Column(name = "last_sync_time")
     private Date last_sync_time;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "contract_id", nullable = false, insertable = false, updatable = false)
+    private Contract contract;
 
     public long getId() {
         return id;
