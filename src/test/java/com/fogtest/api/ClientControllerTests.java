@@ -5,6 +5,7 @@ import org.junit.Test;
 import org.junit.Before;
 import org.junit.After;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -13,7 +14,10 @@ import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 
 @RunWith(SpringRunner.class)
@@ -36,15 +40,18 @@ public class ClientControllerTests {
     @Test
     public void htmlRender() throws Exception {
         final String url = "http://localhost:" + port + "/clients";
-        String response = this.restTemplate.getForObject(url,
-                String.class);
-        HttpHeaders httpHeaders = this.restTemplate
-                .headForHeaders(url);
-        System.out.println(httpHeaders.getContentType());
-        assertTrue(httpHeaders.getContentType()
-                .includes(MediaType.TEXT_HTML));
-        System.out.println(response);
-        System.out.println(httpHeaders.get("title"));
-        assertThat(response.contains("Hello World!"));
+
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Accept", MediaType.APPLICATION_JSON_VALUE);
+        HttpEntity<String> request = new HttpEntity<String>(headers);
+        ResponseEntity<String> response =
+                restTemplate.exchange(url, HttpMethod.GET, request, String.class);
+        HttpHeaders httpHeaders = response.getHeaders();
+        String responseBody = response.getBody();
+        assertEquals(response.getStatusCode(), HttpStatus.OK);
+        assertTrue(httpHeaders.getContentType().includes(MediaType.TEXT_HTML));
+        assertThat(responseBody.contains("<title>Clients</title>"));
+        assertThat(responseBody.contains("Hello World!"));
     }
 }

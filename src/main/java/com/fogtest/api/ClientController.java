@@ -28,7 +28,7 @@ public class ClientController {
     public String getAllClients(Model model){
         model.addAttribute("title", "Clients");
         model.addAttribute("clients", this.clientServices.getAllClients());
-        return "clients";
+        return "clients_index";
     }
 }
 
