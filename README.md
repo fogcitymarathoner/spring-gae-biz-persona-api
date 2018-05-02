@@ -1,5 +1,8 @@
-spring-gae-biz-persona-api
-==========================
+spring-gae-biz-persona-api - Form Login
+=======================================
+
+THIS DOES NOT WORK WITH APPENGINE
+[Oauth2](https://spring.io/guides/tutorials/spring-boot-oauth2/#_social_login_manual)
 
 Uses JDK 1.8
 Use appengine plugin to run local server and deploy to appengine.
@@ -11,10 +14,10 @@ Comes from this [project](https://github.com/GoogleCloudPlatform/getting-started
 Quickstart
 ==========
 
-# Rename appengine-web.xml - sample.xml to appengine-web.xml
-# Enter your appengine project. Use commands above develop and deploy.
-# Rename application.properties.sample to application.properties
-# Change DB properties
+1. Rename appengine-web.xml - sample.xml to appengine-web.xml
+2. Enter your appengine project. Use commands above develop and deploy.
+3. Rename application.properties.sample to application.properties
+4. Change DB properties
 
 To run locally on port 8081
 ---------------------------
