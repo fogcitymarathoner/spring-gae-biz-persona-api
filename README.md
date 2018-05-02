@@ -49,3 +49,4 @@ To Do
 
 * Todo: switch to JpaRepository for pagination and sorting
 * Todo: add [one-to-many](https://www.callicoder.com/hibernate-spring-boot-jpa-one-to-many-mapping-example/) relations to the models (only works for ThymeLeaf)
+* Todo: Add (Oauth2)[https://spring.io/guides/tutorials/spring-boot-oauth2/#_social_login_manual] social login
