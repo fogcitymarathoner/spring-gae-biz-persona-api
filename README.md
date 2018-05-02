@@ -33,9 +33,8 @@ jdbc:h2:mem:testdb
 
 Caveats
 -------
-
 devtools does not work with appengine.
-joined tables do not work with jackson as demonstrated by 'mysql' branch.
+table joined models do not work with jackson. work ok with ThymeLeaf.
 
 Links
 =====

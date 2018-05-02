@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS clients;
 create table clients (
     id integer UNSIGNED NOT NULL AUTO_INCREMENT,
     name varchar(30),
@@ -16,6 +17,7 @@ create table clients (
     CONSTRAINT PK_Client PRIMARY KEY (id)
 );
 
+DROP TABLE IF EXISTS contracts;
 create table contracts (
     id integer UNSIGNED NOT NULL AUTO_INCREMENT,
     client_id integer,
@@ -34,7 +36,7 @@ create table contracts (
     last_sync_time DATETIME,
     CONSTRAINT PK_Contract PRIMARY KEY(id)
 );
-
+DROP TABLE IF EXISTS employees;
 CREATE TABLE employees (
   id int(11) NOT NULL AUTO_INCREMENT,
   firstname char(20) NOT NULL,
@@ -81,15 +83,15 @@ CREATE TABLE employees (
   modified_user_id int(11) DEFAULT '0',
   last_sync_time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (id));
-
+DROP TABLE IF EXISTS states;
 CREATE TABLE states (
+  id int(10) unsigned NOT NULL AUTO_INCREMENT,
   post_ab char(2) NOT NULL,
   capital char(14) NOT NULL,
   date char(10) NOT NULL,
   flower char(27) NOT NULL,
   name char(14) NOT NULL,
   state_no char(9) NOT NULL,
-  id int(10) unsigned NOT NULL AUTO_INCREMENT,
   last_sync_time datetime DEFAULT NULL,
   modified_user_id int(11) DEFAULT NULL,
   created_user_id int(11) DEFAULT 0,
@@ -97,7 +99,7 @@ CREATE TABLE states (
   modified_date datetime DEFAULT NULL,
   PRIMARY KEY (id)
 );
-
+DROP TABLE IF EXISTS clients_checks;
 CREATE TABLE `clients_checks` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `client_id` int(11) NOT NULL,
@@ -112,7 +114,7 @@ CREATE TABLE `clients_checks` (
   `last_sync_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 );
-
+DROP TABLE IF EXISTS clients_memos;
 CREATE TABLE `clients_memos` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `date` date NOT NULL,
@@ -125,7 +127,7 @@ CREATE TABLE `clients_memos` (
   `last_sync_time` datetime NOT NULL,
   PRIMARY KEY (`id`),
 );
-
+DROP TABLE IF EXISTS contracts_items;
 CREATE TABLE `contracts_items` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `active` int(11) DEFAULT '1',
@@ -142,7 +144,7 @@ CREATE TABLE `contracts_items` (
   `last_sync_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 );
-
+DROP TABLE IF EXISTS employees_memos;
 CREATE TABLE `employees_memos` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `date` date NOT NULL,
@@ -155,7 +157,7 @@ CREATE TABLE `employees_memos` (
   `last_sync_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
 );
-
+DROP TABLE IF EXISTS expenses;
 CREATE TABLE `expenses` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `amount` float NOT NULL,
@@ -173,14 +175,14 @@ CREATE TABLE `expenses` (
   `modified_user_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 );
-
+DROP TABLE IF EXISTS expenses_categories;
 CREATE TABLE `expenses_categories` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` char(22) NOT NULL,
   PRIMARY KEY (`id`)
 );
 
-
+DROP TABLE IF EXISTS invoices;
 CREATE TABLE `invoices` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `contract_id` int(11) unsigned NOT NULL DEFAULT '0',
@@ -209,7 +211,7 @@ CREATE TABLE `invoices` (
   `created_user_id` int(11) DEFAULT NULL,
   `modified_user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`));
-
+DROP TABLE IF EXISTS invoices_items;
 CREATE TABLE `invoices_items` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `active` int(11) DEFAULT '1',
@@ -227,7 +229,3 @@ CREATE TABLE `invoices_items` (
   `last_sync_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 );
-
-
-
-

@@ -3,6 +3,7 @@ data.sql
 
 # DB Password
 application.properties
+application.properties.mysql_real
 
 # mac junk
 .DS_Store
