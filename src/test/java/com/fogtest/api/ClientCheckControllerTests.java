@@ -22,10 +22,10 @@ import org.springframework.http.MediaType;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
-public class ClientControllerTests {
+public class ClientCheckControllerTests {
 
     @Autowired
-    private ClientController controller;
+    private ClientCheckController controller;
 
     @LocalServerPort
     private int port;
@@ -40,8 +40,7 @@ public class ClientControllerTests {
 
     @Test
     public void htmlRender() throws Exception {
-        final String url = "http://localhost:" + port + "/clients";
-
+        final String url = "http://localhost:" + port + "/clientschecks";
 
         HttpHeaders headers = new HttpHeaders();
         headers.add("Accept", MediaType.APPLICATION_JSON_VALUE);
@@ -52,6 +51,6 @@ public class ClientControllerTests {
         String responseBody = response.getBody();
         assertEquals(response.getStatusCode(), HttpStatus.OK);
         assertTrue(httpHeaders.getContentType().includes(MediaType.TEXT_HTML));
-        assertTrue(responseBody.contains("<title>Clients</title>"));
+        assertTrue(responseBody.contains("<title>Clients Checks</title>"));
     }
 }

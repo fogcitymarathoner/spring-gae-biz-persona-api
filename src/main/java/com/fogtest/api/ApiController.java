@@ -56,7 +56,7 @@ public class ApiController {
 
     @GetMapping("/clientschecks")
     public List<ClientCheck> getAllClientChecks(){
-        return this.clientCheckServices.getAllClientChecks();
+        return this.clientCheckServices.getAllClientsChecks();
     }
 
     @GetMapping("/clientsmemos")

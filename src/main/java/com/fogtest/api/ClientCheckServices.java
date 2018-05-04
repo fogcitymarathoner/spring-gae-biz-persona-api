@@ -17,7 +17,7 @@ public class ClientCheckServices {
         this.clientCheckRepository = clientCheckRepository;
     }
 
-    public List<ClientCheck> getAllClientChecks(){
+    public List<ClientCheck> getAllClientsChecks(){
         List<ClientCheck> clientChecks = new ArrayList<>();
         this.clientCheckRepository.findAll().forEach(clientChecks::add);
         return clientChecks;
