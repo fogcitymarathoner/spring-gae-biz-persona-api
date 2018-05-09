@@ -11,10 +11,10 @@ Comes from this [project](https://github.com/GoogleCloudPlatform/getting-started
 Quickstart
 ==========
 
-# Rename appengine-web.xml - sample.xml to appengine-web.xml
-# Enter your appengine project. Use commands above develop and deploy.
-# Rename application.properties.sample to application.properties
-# Change DB properties
+1. Rename appengine-web.xml - sample.xml to appengine-web.xml
+2. Enter your appengine project. Use commands above develop and deploy.
+3. Rename application.properties.sample to application.properties
+4. Change DB properties
 
 To run locally on port 8081
 ---------------------------
@@ -48,3 +48,4 @@ To Do
 
 * Todo: switch to JpaRepository for pagination and sorting
 * Todo: add [one-to-many](https://www.callicoder.com/hibernate-spring-boot-jpa-one-to-many-mapping-example/) relations to the models (only works for ThymeLeaf)
+* Todo: Add [Oauth2](https://spring.io/guides/tutorials/spring-boot-oauth2/#_social_login_manual) social login
