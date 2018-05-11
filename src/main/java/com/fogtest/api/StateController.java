@@ -17,6 +17,6 @@ public class StateController {
     @GetMapping
     public String getAllStates(Model model){
         model.addAttribute("states", states);
-        return "states";
+        return "states_index";
     }
 }

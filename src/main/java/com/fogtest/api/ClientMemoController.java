@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-@RequestMapping("/clientsmemos")
+@RequestMapping("/clients-memos")
 public class ClientMemoController {
 
     private static List<ClientMemo> clientMemos = new ArrayList<>();
@@ -17,6 +17,6 @@ public class ClientMemoController {
     @GetMapping
     public String getAllClientMemos(Model model){
         model.addAttribute("clientMemos", clientMemos);
-        return "clientmemos";
+        return "clients_memos_index";
     }
 }

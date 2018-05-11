@@ -20,6 +20,6 @@ public class ContractController {
     @GetMapping
     public String getAllContracts(Model model){
         model.addAttribute("contracts", contracts);
-        return "contracts";
+        return "contracts_index";
     }
 }

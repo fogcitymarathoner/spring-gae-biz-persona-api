@@ -19,7 +19,7 @@ public class EmployeeController {
     @GetMapping
     public String getAllEmployees(Model model){
         model.addAttribute("employees", employees);
-        return "employees";
+        return "employees_index";
     }
 }
 

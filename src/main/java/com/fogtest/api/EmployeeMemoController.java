@@ -17,6 +17,6 @@ public class EmployeeMemoController {
     @GetMapping
     public String getAllEmployeeMemos(Model model){
         model.addAttribute("employeeMemos", employeeMemos);
-        return "employeememos";
+        return "employees_memos_index";
     }
 }

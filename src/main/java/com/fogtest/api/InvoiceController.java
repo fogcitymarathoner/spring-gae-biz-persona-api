@@ -17,7 +17,7 @@ public class InvoiceController {
     @GetMapping
     public String getAllInvoices(Model model){
         model.addAttribute("invoices", invoices);
-        return "invoices";
+        return "invoices_index";
     }
 }
 

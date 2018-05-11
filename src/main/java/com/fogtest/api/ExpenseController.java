@@ -18,6 +18,6 @@ public class ExpenseController {
     @GetMapping
     public String getAllExpenses(Model model){
         model.addAttribute("expenses", expenses);
-        return "expenses";
+        return "expenses_index";
     }
 }

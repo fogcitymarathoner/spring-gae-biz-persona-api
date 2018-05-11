@@ -18,6 +18,6 @@ public class InvoiceItemController {
     @GetMapping
     public String getAllInvoices(Model model){
         model.addAttribute("invoices_items", invoicesItems);
-        return "invoices-items";
+        return "invoices_items_index";
     }
 }

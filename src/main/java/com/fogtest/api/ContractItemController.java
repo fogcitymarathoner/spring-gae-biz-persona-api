@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Date;
 
 @Controller
-@RequestMapping("/contractitems")
+@RequestMapping("/contracts-items")
 public class ContractItemController {
 
     private static List<ContractItem> contractitems = new ArrayList<>();
@@ -20,6 +20,6 @@ public class ContractItemController {
     @GetMapping
     public String getAllContractItems(Model model){
         model.addAttribute("contractitems", contractitems);
-        return "contractitems";
+        return "contracts_items_index";
     }
 }
