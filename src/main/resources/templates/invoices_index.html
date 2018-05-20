@@ -5,6 +5,17 @@
     <title>Invoices</title>
 </head>
 <body>
-
+<table>
+    <tr>
+        <th>Client Name</th>
+        <th>Id</th>
+        <th>Date</th>
+    </tr>
+    <tr th:each="invoice:${invoices}">
+        <td th:text="${invoice.getContract_id()}"></td>
+        <td th:text="${invoice.id}"></td>
+        <td th:text="${invoice.date}"></td>
+    </tr>
+</table>
 </body>
 </html>
