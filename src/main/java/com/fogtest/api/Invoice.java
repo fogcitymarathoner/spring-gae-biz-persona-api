@@ -74,6 +74,10 @@ public class Invoice {
         this.id = id;
     }
 
+    public Contract getContract() {
+        return contract;
+    }
+
     public long getContract_id() {
         return contract_id;
     }

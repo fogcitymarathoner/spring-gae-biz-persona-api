@@ -91,6 +91,10 @@ public class Contract {
         this.id = id;
     }
 
+    public Client getClient() {
+        return client;
+    }
+
     public long getClient_id() {
         return client_id;
     }
