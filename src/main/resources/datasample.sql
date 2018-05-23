@@ -25,7 +25,7 @@ INSERT INTO contracts (
 INSERT into invoices (
   id, contract_id, amount, date, timecard_receipt_sent, message, created_user_id, modified_user_id
 ) VALUES
-(1, 1, 2.3, '2017-02-05', 0, '', 1, 1),
+(1, 1, 2.3, '2018-02-05', 0, '', 1, 1),
 (2, 2, 12.3, '2017-02-05', 0, '', 1, 1);
 
 INSERT INTO states (post_ab, name, capital, date, flower, state_no, modified_user_id, created_user_id) VALUES ('CA', 'California', 'Sacramento', '1849', 'Poppy', '20th', 1, 1);

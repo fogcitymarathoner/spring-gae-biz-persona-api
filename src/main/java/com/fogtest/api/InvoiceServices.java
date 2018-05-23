@@ -22,4 +22,10 @@ public class InvoiceServices {
         this.invoiceRepository.findAll().forEach(invoices::add);
         return invoices;
     }
+
+    public List<Invoice> getAllInvoicesOrderByDateAsc(){
+        List<Invoice> invoices = new ArrayList<>();
+        this.invoiceRepository.findAllByOrderByDateAsc().forEach(invoices::add);
+        return invoices;
+    }
 }
