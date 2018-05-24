@@ -8,7 +8,7 @@ import java.util.Date;
 public class Invoice {
     @Id
     @Column(name="id")
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Column(name = "contract_id")
@@ -278,9 +278,8 @@ public class Invoice {
         this.last_sync_time = last_sync_time;
     }
 
-    public Invoice(long id, long contract_id, Date date, String po, Float employerexpenserate, Integer terms, Boolean timecard, String notes, Date period_start, Date period_end, Boolean posted, Boolean cleared, Date cleared_date, Boolean prcleared, Boolean timecard_receipt_sent, String message, Float amount, Boolean voided, String token, Integer view_count, Boolean mock, Date created_date, Date modified_date, long created_user_id, long modified_user_id, Date last_sync_time) {
+    public Invoice( long contract_id, Date date, String po, Float employerexpenserate, Integer terms, Boolean timecard, String notes, Date period_start, Date period_end, Boolean posted, Boolean cleared, Date cleared_date, Boolean prcleared, Boolean timecard_receipt_sent, String message, Float amount, Boolean voided, String token, Integer view_count, Boolean mock, Date created_date, Date modified_date, long created_user_id, long modified_user_id, Date last_sync_time) {
 
-        this.id = id;
         this.contract_id = contract_id;
         this.date = date;
         this.po = po;
