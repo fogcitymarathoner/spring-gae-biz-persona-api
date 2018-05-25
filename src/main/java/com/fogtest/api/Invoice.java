@@ -45,13 +45,6 @@ public class Invoice {
     private Float amount;
     @Column(name="voided")
     private Boolean voided;
-    @Column(name="token")
-    private String token;
-    @Column(name="view_count")
-    private Integer view_count;
-    @Column(name="mock")
-    private Boolean mock;
-
     @Column(name = "created_date")
     private Date created_date;
     @Column(name = "modified_date")
@@ -214,30 +207,6 @@ public class Invoice {
         this.voided = voided;
     }
 
-    public String getToken() {
-        return token;
-    }
-
-    public void setToken(String token) {
-        this.token = token;
-    }
-
-    public Integer getView_count() {
-        return view_count;
-    }
-
-    public void setView_count(Integer view_count) {
-        this.view_count = view_count;
-    }
-
-    public Boolean getMock() {
-        return mock;
-    }
-
-    public void setMock(Boolean mock) {
-        this.mock = mock;
-    }
-
     public Date getCreated_date() {
         return created_date;
     }
@@ -297,9 +266,6 @@ public class Invoice {
         this.message = message;
         this.amount = amount;
         this.voided = voided;
-        this.token = token;
-        this.view_count = view_count;
-        this.mock = mock;
         this.created_date = created_date;
         this.modified_date = modified_date;
         this.created_user_id = created_user_id;

@@ -23,7 +23,8 @@ INSERT INTO contracts (
   30, '2018-05-18','2012-09-06', '2016-10-01 05:14:19', '2016-10-01 05:14:19',
   1, 2, '2016-10-01 05:14:19');
 INSERT into invoices (
-  id, contract_id, amount, date, timecard_receipt_sent, message, created_user_id, modified_user_id
+  id, contract_id, amount, date, timecard_receipt_sent, message,
+  created_user_id, modified_user_id
 ) VALUES
 (1, 1, 2.3, '2018-02-05', 0, '', 1, 1),
 (2, 2, 12.3, '2017-02-05', 0, '', 1, 1);
