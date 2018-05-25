@@ -8,5 +8,6 @@ import java.util.List;
 @Repository
 public interface InvoiceRepository extends CrudRepository<Invoice, Long> {
 
+    List<Invoice> findAll();
     List<Invoice> findAllByOrderByDateAsc();
 }

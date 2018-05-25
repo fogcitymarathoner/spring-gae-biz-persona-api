@@ -46,20 +46,6 @@ public class Contract {
     @JoinColumn(name = "client_id", nullable = false, insertable = false, updatable = false)
     private Client client;
 
-    @OneToMany(cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY,
-            mappedBy = "contract")
-    private Set<Invoice> invoices = new HashSet<>();
-
-    public Set<Invoice> getInvoices() {
-        return invoices;
-    }
-
-    public void setInvoices(Set<Invoice> invoices) {
-        this.invoices = invoices;
-    }
-
-
     public Contract() {
         super();
     }
