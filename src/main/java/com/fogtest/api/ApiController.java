@@ -69,14 +69,9 @@ public class ApiController {
         return this.contractServices.getAllContracts();
     }
 
-    @GetMapping("/contractitems")
+    @GetMapping("/contractsitems")
     public List<ContractItem> getAllContractItems(){
         return this.contractItemServices.getAllContractItems();
-    }
-
-    @GetMapping("/expenses")
-    public List<Expense> getAllExpenses(){
-        return this.expenseServices.getAllExpenses();
     }
 
     @GetMapping("/employees")
@@ -88,9 +83,10 @@ public class ApiController {
     public List<EmployeeMemo> getAllEmployeeMemos(){
         return this.employeeMemoServices.getAllEmployeeMemos();
     }
-    @GetMapping("/states")
-    public List<State> getAllStates(){
-        return this.stateServices.getAllStates();
+
+    @GetMapping("/expenses")
+    public List<Expense> getAllExpenses(){
+        return this.expenseServices.getAllExpenses();
     }
 
     @GetMapping("/invoices")
@@ -98,9 +94,14 @@ public class ApiController {
         return this.invoiceServices.getAllInvoices();
     }
 
-    @GetMapping("/invoices-items")
+    @GetMapping("/invoicesitems")
     public List<InvoiceItem> getAllInvoicesItems(){
         return this.invoiceItemServices.getAllInvoicesItems();
+    }
+
+    @GetMapping("/states")
+    public List<State> getAllStates(){
+        return this.stateServices.getAllStates();
     }
 
 }

@@ -40,7 +40,7 @@ public class ContractItemControllerTests {
 
     @Test
     public void htmlRender() throws Exception {
-        final String url = "http://localhost:" + port + "/contracts-items";
+        final String url = "http://localhost:" + port + "/contractsitems";
 
         HttpHeaders headers = new HttpHeaders();
         headers.add("Accept", MediaType.APPLICATION_JSON_VALUE);
