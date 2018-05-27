@@ -1,9 +1,9 @@
 package com.fogtest.api;
 
-import javax.persistence.*;
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "contracts")
@@ -45,6 +45,9 @@ public class Contract {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "client_id", nullable = false, insertable = false, updatable = false)
     private Client client;
+
+    @OneToMany(mappedBy = "contract")
+    private List<Invoice> invoices;
 
     public Contract() {
         super();

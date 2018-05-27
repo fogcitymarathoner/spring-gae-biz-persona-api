@@ -1,3 +1,7 @@
+# in development
+# Invoice Deserializing for detail testing on api payloads
+src/main/java/com/fogtest/api/InvoiceResp.java
+
 # data
 data.sql
 

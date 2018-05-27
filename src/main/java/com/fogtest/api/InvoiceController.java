@@ -26,7 +26,6 @@ public class InvoiceController {
     @GetMapping
     public String getAllInvoices(Model model){
         invoices = this.invoiceServices.getAllInvoicesOrderByDateAsc();
-        System.out.println(invoices);
         model.addAttribute("invoices", invoices);
         return "invoices_index";
     }
