@@ -24,10 +24,10 @@ INSERT INTO contracts (
   1, 2, '2016-10-01 05:14:19');
 INSERT into invoices (
   id, contract_id, amount, date, timecard_receipt_sent, message,
-  created_user_id, modified_user_id
+  created_user_id, modified_user_id, notes
 ) VALUES
-(1, 1, 2.3, '2018-02-05', 0, '', 1, 1),
-(2, 2, 12.3, '2017-02-05', 0, '', 1, 1);
+(1, 1, 2.3, '2018-02-05', 0, 'msg 1', 1, 1, 'note 1'),
+(2, 2, 12.3, '2017-02-05', 0, 'msg 2', 1, 1, 'note 2');
 
 INSERT INTO states (post_ab, name, capital, date, flower, state_no, modified_user_id, created_user_id) VALUES ('CA', 'California', 'Sacramento', '1849', 'Poppy', '20th', 1, 1);
 INSERT INTO states (post_ab, name, capital, date, flower, state_no, modified_user_id, created_user_id) VALUES ('AL', 'Alabama', 'Montgomery', '1900', 'Camella', '30th', 1, 1);

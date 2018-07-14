@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Invoice</title>
+</head>
+<body>
+<div th:utext="${invoice.id}"></div>
+<div th:utext="${invoice.date}"></div>
+<div th:utext="${invoice.po}"></div>
+<div th:utext="${invoice.employerexpenserate}"></div>
+<div th:utext="${invoice.terms}"></div>
+<div th:utext="${invoice.timecard}"></div>
+<div th:utext="${invoice.notes}"></div>
+<div th:utext="${invoice.period_start}"></div>
+<div th:utext="${invoice.period_end}"></div>
+<div th:utext="${invoice.posted}"></div>
+<div th:utext="${invoice.cleared}"></div>
+<div th:utext="${invoice.cleared_date}"></div>
+<div th:utext="${invoice.prcleared}"></div>
+<div th:utext="${invoice.timecard_receipt_sent}"></div>
+<div th:utext="${invoice.message}"></div>
+<div th:utext="${invoice.amount}"></div>
+<div th:utext="${invoice.voided}"></div>
+</body>
+</html>
